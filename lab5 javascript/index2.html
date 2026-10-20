@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penilaian Mahasiswa</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8fafc;
+        color: #334155;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        background: #ffffff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        padding-bottom: 50px;
+      }
+      
+      .navbar {
+        background-color: #1e293b;
+        padding: 12px 24px;
+        display: flex;
+        gap: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+      
+      .navbar a {
+        color: #94a3b8;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s;
+      }
+      
+      .navbar a:hover, 
+      .navbar a[style*="color: #4caf50"] {
+        color: #4caf50 !important;
+      }
+
+      .content-wrapper {
+        padding: 0 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: inline-block;
+        width: 120px;
+        font-weight: 600;
+      }
+
+      input {
+        padding: 6px 10px;
+        width: 150px;
+        border: 1px solid #cbd5e1;
+        border-radius: 4px;
+      }
+
+      button {
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.2s;
+      }
+
+      button:hover {
+        background-color: #2563eb;
+      }
+
+      .hasil-box {
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid #e2e8f0;
+        background-color: #f8fafc;
+        border-radius: 6px;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html">Halaman 1</a>
+      <a href="index2.html" style="color: #4caf50">Halaman 2</a>
+    </nav>
+
+    <div class="content-wrapper">
+      <h2>Form Perhitungan Nilai Akhir</h2>
+      
+      <div class="form-group">
+        <label for="tugas">Nilai Tugas:</label>
+        <input type="number" id="tugas" min="0" max="100" />
+      </div>
+
+      <div class="form-group">
+        <label for="uts">Nilai UTS:</label>
+        <input type="number" id="uts" min="0" max="100" />
+      </div>
+
+      <div class="form-group">
+        <label for="uas">Nilai UAS:</label>
+        <input type="number" id="uas" min="0" max="100" />
+      </div>
+
+      <button type="button" onclick="prosesPenilaian()">Hitung Nilai</button>
+
+      <div class="hasil-box">
+        <h3>Hasil Penilaian:</h3>
+        <p>Nilai Akhir: <span id="resNilaiAkhir">-</span></p>
+        <p>Predikat: <span id="resPredikat">-</span></p>
+        <p>Status: <span id="resStatus">-</span></p>
+      </div>
+    </div>
+
+    <script src="script2.js"></script>
+  </body>
+</html>
